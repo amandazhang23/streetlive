@@ -86,7 +86,7 @@
 	    <!--TODO CHECK VALID INPUTS (UNIQUE USER, VALID PASS, VALID EMAIL, NO EMPTY FIELDS -->
 	</div>
 	<div data-role="page" id="perfregister">
-	    <form method="post" action="something??">
+	    <form id="pform" method="post" action="something??">
 	    <div class="ui-field-contain">
 		<label for="pname">Please provide your name or stagename:</label>
 	        <input type="text" name="pname" id="pname" placeholder="First and last name or stagename...">
@@ -117,7 +117,7 @@
 			<input type="search" name="search" id="search" placeholder="Search the area!">
 		</div>
 		<div data-role="main" class="ui-content">
-			<a href="#panel" class="ui-btn ui-icon-carat-r ui-alt-icon u-btn-icon-notext">Feed</a>
+			<a href="#feed" class="ui-btn ui-btn-icon-left ui-icon-carat-r ui-alt-icon ui-btn-icon-notext">Feed</a>
 			<div id="map-canvas">
 				<p>Map Here</p>
 			</div>
