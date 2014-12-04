@@ -93,5 +93,38 @@
 	    <input type="submit" data-inline="true" value="Submit">
 	    <!--TODO CHECK VALID INPUTS (UNIQUE USER, VALID PASS, VALID EMAIL, NO EMPTY FIELDS EXCEPT OPTIONAL-->
 	</div>
+	<div data-role="page" id="home">
+		<div data-role="panel" id="feed">
+			<a href="#" class="ui-btn">Link to map marker</a>
+			<a href="#" class="ui-btn">pass new coordinates to map</a>
+			<a href="#" class="ui-btn">open marker bubble with info</a>
+		</div>
+
+		<div data-role="header">
+			<div id="username">
+				<a href="#userinfo" class="ui-btn ui-corner-all ui-shadow ui-icon-user ui-btn-icon-left">Guest</a>
+			</div>
+			<h1>streetLive</h1>
+			<input type="search" name="search" id="search" placeholder="Search the area!">
+		</div>
+		<div data-role="main" class="ui-content">
+			<a href="#panel" class="ui-btn ui-icon-carat-r ui-alt-icon u-btn-icon-notext">Feed</a>
+			<div id="map-canvas">
+				<p>Map Here</p>
+			</div>
+		</div>
+	</div>
+	<div data-role="page" id="userinfo">
+		<div data-role="header">
+			<a href="#home" class="ui-btn-b ui-shadow ui-icon-home ui-btn-icon-left">Home</a>
+			<h1>Profile</h1>
+		</div>
+		<div data-role="main" class="ui-content">
+			<p>Username</p>
+			<p>Email</p>
+			<p>Other user info</p>
+			<p>(TODO Need scripts to populate these fields and edit!)</p>
+		</div>
+	<div>
     </body>
 </html>
