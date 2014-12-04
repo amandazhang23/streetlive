@@ -77,17 +77,21 @@
 	<div data-role="page" id="perfregister">
 	    <form method="post" action="something??">
 	    <div class="ui-field-contain">
+		<label for="pname">Please provide your name or stagename:</label>
+	        <input type="text" name="pname" id="pname" placeholder="First and last name or stagename...">
 	        <label for="pusername">Please provide a username:</label>
 	        <input type="text" name="pusername" id="pusername" placeholder="Username...">
 	        <label for="pemail">Valid email:</label>
-	        <input type="text" name="pemail" id="semail" placeholder="Email ex. joe@example.com...">
+	        <input type="text" name="pemail" id="pemail" placeholder="Email ex. joe@example.com...">
 	        <label for="ppassword">Password:</label>
-	        <input type="text" name="ppassword" id="spassword" placeholder="Password...">
-	        <label for="sconfirm">Confirm Password:</label>
-	        <input type="text" name="sconfirm" id="sconfirm" placeholder="Password (again)...">
+	        <input type="text" name="ppassword" id="ppassword" placeholder="Password...">
+	        <label for="pconfirm">Confirm Password:</label>
+	        <input type="text" name="pconfirm" id="pconfirm" placeholder="Password (again)...">
+		<label for="pname">(Optional) Provide a brief description of your performance</label>
+	        <input type="text" name="pdescript" id="pdescript" placeholder="Ex. solo rock n' roll singer/songwriter...">
 	    </div>
 	    <input type="submit" data-inline="true" value="Submit">
-	    <!--TODO CHECK VALID INPUTS (UNIQUE USER, VALID PASS, VALID EMAIL, NO EMPTY FIELDS -->
+	    <!--TODO CHECK VALID INPUTS (UNIQUE USER, VALID PASS, VALID EMAIL, NO EMPTY FIELDS EXCEPT OPTIONAL-->
 	</div>
     </body>
 </html>

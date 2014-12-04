@@ -53,57 +53,88 @@
         <script type="text/javascript"
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA74XrhRc8EQ_BJltMNUi_XdghhnqVPynA">
             </script>
+            
+	<div data-role="page" id="register">
+	    <div data-role="main" class="ui-content">
+		<p>StreetLive</p>
+		<!-- TODO Insert logo here -->
+		<p>Register as a:</p>
+		<div data-role="controlgroup" data-type="horizontal">
+		    <a href="#spectregister" class="ui-btn">Spectator</a>
+		    <a href="#perfregister" class="ui-btn">Performer</a>
+		</div>
+		<p>Already have an account?
+		    <a href="#login">Login</a>
+		</p>
+		<p>Or you can give it a try as</p>
+		<a href="#home" class="ui-btn ui-btn-inline">Guest</a>
+	    </div>
+	</div>
+	<div data-role="page" id="spectregister">
+	    <form method="post" action="something??">
+	    <div class="ui-field-contain">
+	        <label for="susername">Please provide a username:</label>
+	        <input type="text" name="susername" id="susername" placeholder="Username...">
+	        <label for="semail">Valid email:</label>
+	        <input type="text" name="semail" id="semail" placeholder="Email ex. joe@example.com...">
+	        <label for="spassword">Password:</label>
+	        <input type="text" name="spassword" id="spassword" placeholder="Password...">
+	        <label for="sconfirm">Confirm Password:</label>
+	        <input type="text" name="sconfirm" id="sconfirm" placeholder="Password (again)...">
+	    </div>
+	    <input type="submit" data-inline="true" value="Submit">
+	    <!--TODO CHECK VALID INPUTS (UNIQUE USER, VALID PASS, VALID EMAIL, NO EMPTY FIELDS -->
+	</div>
+	<div data-role="page" id="perfregister">
+	    <form method="post" action="something??">
+	    <div class="ui-field-contain">
+		<label for="pname">Please provide your name or stagename:</label>
+	        <input type="text" name="pname" id="pname" placeholder="First and last name or stagename...">
+	        <label for="pusername">Please provide a username:</label>
+	        <input type="text" name="pusername" id="pusername" placeholder="Username...">
+	        <label for="pemail">Valid email:</label>
+	        <input type="text" name="pemail" id="pemail" placeholder="Email ex. joe@example.com...">
+	        <label for="ppassword">Password:</label>
+	        <input type="text" name="ppassword" id="ppassword" placeholder="Password...">
+	        <label for="pconfirm">Confirm Password:</label>
+	        <input type="text" name="pconfirm" id="pconfirm" placeholder="Password (again)...">
+		<label for="pname">(Optional) Provide a brief description of your performance</label>
+	        <input type="text" name="pdescript" id="pdescript" placeholder="Ex. solo rock n' roll singer/songwriter...">
+	    </div>
+	    <input type="submit" data-inline="true" value="Submit">
+	    <!--TODO CHECK VALID INPUTS (UNIQUE USER, VALID PASS, VALID EMAIL, NO EMPTY FIELDS EXCEPT OPTIONAL-->
+	</div>
+	<div data-role="page" id="home">
+		<div data-role="panel" id="feed">
+			<a href="#" class="ui-btn">Link to map marker</a>
+			<a href="#" class="ui-btn">pass new coordinates to map</a>
+			<a href="#" class="ui-btn">open marker bubble with info</a>
+		</div>
 
-        <div data-role="page" id="register"
-            <div data-role="main" class="ui-content">
-            <p>StreetLive</p>
-            <!-- TODO Insert logo here -->
-            <p>Register as a:</p>
-            <div data-role="controlgroup" data-type="horizontal">
-                <a href="#spectregister" class="ui-btn">Spectator</a>
-                <a href="#perfregister" class="ui-btn">Performer</a>
-            </div>
-            <p>Already have an account?
-                <a href="#login">Login</a>
-            </p>
-            <p>Or you can give it a try as</p>
-            <a href="#home" class="ui-btn ui-btn-inline">Guest</a>
-            </div>
-            <a href="#map-canvas">Map</a>
-        </div>
-        <div data-role="page" id="spectregister">
-            <form method="post" action="something??">
-            <div class="ui-field-contain">
-                <label for="susername">Please provide a username:</label>
-                <input type="text" name="susername" id="susername" placeholder="Username...">
-                <label for="semail">Valid email:</label>
-                <input type="text" name="semail" id="semail" placeholder="Email ex. joe@example.com...">
-                <label for="spassword">Password:</label>
-                <input type="text" name="spassword" id="spassword" placeholder="Password...">
-                <label for="sconfirm">Confirm Password:</label>
-                <input type="text" name="sconfirm" id="sconfirm" placeholder="Password (again)...">
-            </div>
-            <input type="submit" data-inline="true" value="Submit">
-            <!--TODO CHECK VALID INPUTS (UNIQUE USER, VALID PASS, VALID EMAIL, NO EMPTY FIELDS -->
-        </div>
-        <div data-role="page" id="perfregister">
-            <form id="perfform" method="post" action="something??">
-            <div class="ui-field-contain">
-            <label for="pname">Please provide your name or stagename:</label>
-                <input type="text" name="pname" id="pname" placeholder="First and last name or stagename...">
-                <label for="pusername">Please provide a username:</label>
-                <input type="text" name="pusername" id="pusername" placeholder="Username...">
-                <label for="pemail">Valid email:</label>
-                <input type="text" name="pemail" id="pemail" placeholder="Email ex. joe@example.com...">
-                <label for="ppassword">Password:</label>
-                <input type="text" name="ppassword" id="ppassword" placeholder="Password...">
-                <label for="pconfirm">Confirm Password:</label>
-                <input type="text" name="pconfirm" id="pconfirm" placeholder="Password (again)...">
-            <label for="pname">(Optional) Provide a brief description of your performance</label>
-                <input type="text" name="pdescript" id="pdescript" placeholder="Ex. solo rock n' roll singer/songwriter...">
-            </div>
-            <input type="submit" data-inline="true" value="Submit">
-            <!--TODO CHECK VALID INPUTS (UNIQUE USER, VALID PASS, VALID EMAIL, NO EMPTY FIELDS EXCEPT OPTIONAL-->
-        </div>
+		<div data-role="header">
+			<a href="#userinfo" class="ui-btn ui-corner-all ui-shadow ui-icon-user ui-btn-icon-left">Guest</a>
+			<h1>streetLive</h1>
+			<input type="search" name="search" id="search" placeholder="Search the area!">
+		</div>
+		<div data-role="main" class="ui-content">
+			<a href="#panel" class="ui-btn ui-icon-carat-r ui-alt-icon u-btn-icon-notext">Feed</a>
+			<div id="map-canvas">
+				<p>Map Here</p>
+			</div>
+		</div>
+	</div>
+	<div data-role="page" id="userinfo">
+		<div data-role="header">
+			<a href="#home" class="ui-btn-b ui-shadow ui-icon-home ui-btn-icon-left">Home</a>
+			<h1>Profile</h1>
+		</div>
+		<div data-role="main" class="ui-content">
+			<p>Username</p>
+			<p>Email</p>
+			<p>Other user info</p>
+			<p>(TODO Need scripts to populate these fields and edit!)</p>
+		</div>
+	<div>
+
     </body>
 </html>
