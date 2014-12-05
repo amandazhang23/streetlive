@@ -48,27 +48,16 @@ var app = {
     }
 };
 
-function onDeviceReady() {
-    
-    var login_status = false;
-    
-    window.localStorage.setItem("key", "value");
-    var keyname = window.localStorage.key(i);
-    // keyname is now equal to "key"
-    var value = window.localStorage.getItem("key");
-    // value is now equal to "value"
-}
+var map;
 
-function initialize() {
+function initializeMap() {
     var mapOptions = {
-    center: { lat: -34.397, lng: 150.644},
-    zoom: 8
+    center: new google.maps.LatLng(43.069452, -89.411373),
+    zoom: 11,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
     };
-    var map = new google.maps.Map(document.getElementById('map-canvas'),
-                                  mapOptions);
+    map = new google.maps.Map(document.getElementById("map"), mapOptions);
 }
-google.maps.event.addDomListener(window, 'load', initialize);
-
 
 
 app.initialize();
