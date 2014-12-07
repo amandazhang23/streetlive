@@ -119,6 +119,7 @@ function validateSFormOnSubmit(sForm) {
     return false;
 }
 
+<<<<<<< HEAD
 // validate login form. Accepts the form as an html object and calls renderSeshDOM on valid credentials.
 function validateLoginFormOnSubmit(form){
 	// append error messages to reason string
@@ -158,6 +159,12 @@ function validateLoginFormOnSubmit(form){
 	}
 	return false;
 }
+=======
+/*function validateName(name) {
+  -	if(name = )
+   
+}*/
+>>>>>>> d0dfcf64df0a4e113ab0f293222bf6b3b99993f5
 
 /*function onSubmit(pForm) {
     alert("insert worked method 1");
