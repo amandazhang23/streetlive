@@ -48,7 +48,9 @@ var app = {
     }
 };
 // Wait for device Api's to load
-document.addEventListener("deviceready", function() {
+document.addEventListener("deviceready", pluginMap, false)
+
+function pluginMap(){
 	// Listen for pause and resume events, initiate local session storage
 //	document.addEventListener("pause", onPause, false);
 //	document.addEventListener("resume", onResume, false);
@@ -79,8 +81,30 @@ document.addEventListener("deviceready", function() {
 		});
 	};
 	
-}, false);
+}
 
+// modify session storage and update the dom with user's profile
+function renderSeshDOM(tx, results, user){
+	window.localStorage.setItem("login", true);
+	window.localStorage.setItem("user_id", results.rows.item.id);
+	console.log("user: %o", user);
+	console.log("results: %o", results);
+//	$("document").on("pagebeforecreate", "#home", function(user){
+		$(".sesh_username").text(user.username);
+		$("#userInfoLink .ui-btn-text").text(user.username);
+		$(".sesh_email").text(user.email);
+		if (user.role){
+    			$(".sesh_description").html("<h2>Performer Description:</h2><p>" + user.description + "</p>");
+	   		$("#perfAnnounce").html("<a href=" + "#announce" + " class=" + "ui-btn ui-btn-inline ui-btn-icon-left ui-icon-carat-l ui-alt-icon ui-btn-icon-notext" + ">Performing now?</a>");
+		}
+//	});    
+	$.mobile.changePage("#home");
+}
+
+function failLogin(err){
+	alert("Username and password do not match. Please retype.");
+	console.log(err.code);
+}
 
 
 app.initialize();

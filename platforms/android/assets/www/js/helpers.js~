@@ -1,0 +1,83 @@
+// Validation functions
+function validateName(name) {
+
+    var reason= "";
+    if (name == null || name == "") {
+        reason += "Name must be filled out.";
+    }
+    else if (name.len > 20) {
+        reason += "Name exceeds max length.";
+    }
+    else if (/[^a-zA-Z\-\'\ ]/.test(name)) {
+        reason += "Name can only contain letters and hyphens.";
+    }
+    return reason;
+}
+
+
+function validateUsername(username) {
+    var reason = "";
+    if (username == null || username == "") {
+        reason += "Username must be filled out.";
+    }
+    else if (name.len > 10) {
+        reason += "Username exceeds max length.";
+    }
+    else if ( users_db.transaction(function(tx){tx.executeSql('SELECT id FROM users1 WHERE username = ?', [username], function(tx, results){ 
+	    if(results.rows.item.id != null && results.rows.item.id != ""){return true;}
+    	}, function(tx){return false;})}, errorCB)){
+		reason += "Username already exists";
+	}
+
+    return reason;
+}
+
+
+function validatePassword(password, confirmpw) {
+    var reason = "";
+    if (password == null || password == "") {
+        reason += "Password must be filled out.";
+    }
+    else if (password.len > 20 || password.len < 6) {
+        reason += "Passoword must be between 6 and 20 characters long.";
+    }
+    else if (password != confirmpw) {
+        reason += "Passwords must match";
+    }
+    return reason;
+}
+
+
+function validateEmail(email) {
+
+    var reason = "";
+    if (email == null || email == "") {
+        reason = "Email must be filled out.";
+    }
+    var emailExp = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/;
+    if(emailExp.test(email)) {
+        reason = "Not a valid email address.";
+    }
+    return reason;
+}
+
+
+function validateDescription(description) {
+    var reason = "";
+    if (description.len > 150) {
+        reason = "Description exceeds max length of 150 characters.";
+    }
+    return reason;
+}
+
+function validateNotEmpty(formStr) {
+
+    if (formStr == null || formStr == ''){
+        return "Please complete all fields of the form.";
+    }
+    else {
+	    return "";
+    }
+
+}
+
