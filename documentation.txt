@@ -1,0 +1,17 @@
+Documentation
+
+StreetLive is a cross-platform mobile application with the goal of connecting street performers to audiences. 
+
+It can be simulated by installing Cordova, changing to the StreetLive directory, and running “cordova serve” on the command line.  After loading, you will be provided with a local host URL that will lead to StreetLive on a chrome brower.
+
+The first page StreetLive will direct you to is the registration page.  There are three roles a user can take on: performer, spectator, or guest.  Performers and spectators will each need to complete a registration form with relevant information, including username, password, email, etc.  Performers have the additional option to provide information regarding their genre of specialty.  If you already have a StreetLive account, you can click LOGIN to access your existing account.
+
+After registration, users will be directed to the home page.  There will be a map with markers displaying where performances are held.  When you click on a icon, a bubble will appear with the name of the artist and performance description.  There is also the option to search for performances based on genre or artist in the search bar.  There is a right arrow button that will open a panel with a list-view feed sorted by chronological order instead of spatially like the map.
+
+Performers have the additional ability to announce a performance, which they can do by clicking on the left arrow icon.  They will have the option to provide a description of the event and set the duration from the current time.  
+
+In the future we hope to include a component of StreetLive that allows account holders to link to their PayPal accounts, thus allowing users to easily make donations to artists without the inconvenience of digging up loose change.
+
+The guest account is for users who don’t want to provide all their information in the process of creating an account.  Guest accounts have all the functionality of spectator accounts except for making donations through PayPal. Guest accounts also do not have a profile page displaying their username and email.
+
+
