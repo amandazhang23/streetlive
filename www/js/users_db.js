@@ -105,72 +105,14 @@ function validateSFormOnSubmit(sForm) {
     return false;
 }
 
-function validateName(name) {
-    var reason;
-    if (name == null || name == "") {
-        reason = "Name must be filled out."
-    }
-    else if (name.len > 20) {
-        reason = "Name exceeds max length."
-    };
-    else if (/[^a-zA-Z\-]/.test(name)) {
-        reason = "Name can only contain letters and hyphens."
-    };
-    return reason;
-}
-
-function validateUsername(username) {
-    var reason;
-    if (username == null || username == "") {
-        reason = "Username must be filled out."
-    }
-    else if (name.len > 10) {
-        reason = "Username exceeds max length."
-    };
-    return reason;
-}
-
-function validatePassword(password, confirmpw) {
-    var reason;
-    if (password == null || password == "") {
-        reason = "Password must be filled out."
-    }
-    else if (password.len > 20 || password.len < 6) {
-        reason = "Passowrd must be between 6 and 20 characters long."
-    }
-    else if (password != confirmpw) {
-        reason = "
-    };
-    return reason;
-}
-
-function validateEmail(email) {
-    var reason;
-    if (email == null || email == "") {
-        reason = "Email must be filled out.";
-    var emailExp = /^[w-.+]+@[a-zA-Z0-9.-]+.[a-zA-z0-9]{2,4}$/;
-    if(email.test(emailExp)) {
-        reason = "Not a vaid email address."
-    };
-    return reason;
-}
-
-function validateDescription(description) {
-    var reason;
-    if (description.len > 150) {
-        reason = "Description exceeds max length of 150 characters."
-    };
-    return reason;
-}
-    
-    
-function validateNotEmpty(loginuser, loginpass) {
-    if (loginuser == null || loginuser == '' || loginpass == null || loginpass == '')
-        alert("Please complete all fields of the form.");
-    };
-}
+/*function validateName(name) {
+  -	if(name = )
+   
+}*/
 
 function onSubmit(pForm) {
+    alert("insert worked method 1");
+    console.log("pleaseeee");
     alert(pForm.pname.value +" "+ pForm.pemail.value);
     var hash = CryptoJS.SHA1("" + pForm.ppassword.value);
     var userObj = {
