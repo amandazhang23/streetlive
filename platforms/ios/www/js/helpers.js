@@ -1,4 +1,5 @@
-// Validation functions
+// Validation functions by Amanda Zhang
+// Validate name. Accepts a string and returns an error message or Null.
 function validateName(name) {
 
     var reason= "";
@@ -14,7 +15,7 @@ function validateName(name) {
     return reason;
 }
 
-
+// Validate username. Accepts a string and returns an error message or Null.
 function validateUsername(username) {
     var reason = "";
     if (username == null || username == "") {
@@ -23,6 +24,7 @@ function validateUsername(username) {
     else if (name.len > 10) {
         reason += "Username exceeds max length.";
     }
+    // Should the database return an id from username, username exists
     else if ( users_db.transaction(function(tx){tx.executeSql('SELECT id FROM users WHERE username = ?', [username], function(tx, results){ 
 	    if(results.rows.item.id != null && results.rows.item.id != ""){return true;}
     	}, function(tx){return false;})}, errorCB)){
@@ -32,7 +34,7 @@ function validateUsername(username) {
     return reason;
 }
 
-
+// Validate password and confirm password. Accepts a string and returns an error message or Null.
 function validatePassword(password, confirmpw) {
     var reason = "";
     if (password == null || password == "") {
@@ -47,7 +49,7 @@ function validatePassword(password, confirmpw) {
     return reason;
 }
 
-
+// Validate email. Accepts a string and returns an error message string or Null.
 function validateEmail(email) {
 
     var reason = "";
@@ -61,7 +63,7 @@ function validateEmail(email) {
     return reason;
 }
 
-
+// Validate description. Accepts a string and returns an error message string or Null.
 function validateDescription(description) {
     var reason = "";
     if (description.len > 150) {
@@ -69,7 +71,7 @@ function validateDescription(description) {
     }
     return reason;
 }
-
+// Checks that string inputs are not empty
 function validateNotEmpty(formStr) {
 
     if (formStr == null || formStr == ''){

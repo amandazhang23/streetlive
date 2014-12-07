@@ -23,7 +23,7 @@ function validateUsername(username) {
     else if (name.len > 10) {
         reason += "Username exceeds max length.";
     }
-    else if ( users_db.transaction(function(tx){tx.executeSql('SELECT id FROM users1 WHERE username = ?', [username], function(tx, results){ 
+    else if ( users_db.transaction(function(tx){tx.executeSql('SELECT id FROM users WHERE username = ?', [username], function(tx, results){ 
 	    if(results.rows.item.id != null && results.rows.item.id != ""){return true;}
     	}, function(tx){return false;})}, errorCB)){
 		reason += "Username already exists";

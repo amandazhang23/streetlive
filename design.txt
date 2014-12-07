@@ -3,6 +3,8 @@ To build StreetLive, we used a framework called Cordova.  Cordova allowed us to 
 
 The main content is contained in the www folder.  The file index.html contains all the views/pages of StreetLive.  Each page is indicated by a div with role “page”.  Index.html also links to various plugins, Google Maps, the Jquery mobile library/ CSS stylesheet, and the JavaScript files, located in the js folder.  The JS files handle the “control” or functional aspects of the app, including loading the map and populating the database.  Jquery mobile allowed us to easily create buttons, panels, and other features designed for use on a mobile device.
 
-There are two databases-- one for users and one for performances.  The databases are created on device ready.  Once the user submits the form, the function submitForm is called to populate the database after validating the entries, like checking for null fields.  The database then populates the DOM with the input provided by the user.
+There are two databases-- one for users and one for performances.  These are
+locally stored HTML5 webSQL databases for demo purposes; we intended to pursue
+online hosting like parse in the future. The databases are created on device ready.  Once the user submits the form, the function submitForm is called to populate the database after validating the entries, like checking for null fields.  The database then populates the DOM with the input provided by the user.
 
 The performer announces his location by pulling out the right panel on the home page.  For simplicity’s sake, we set the performance to start at current time and current location (using time and geolocation plugins).  

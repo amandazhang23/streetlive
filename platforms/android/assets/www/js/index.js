@@ -16,6 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+// Cordova default junk
 var app = {
     // Application Constructor
     initialize: function() {
@@ -47,17 +48,19 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
-// Wait for device Api's to load
+// Wait for device Apis to load
 document.addEventListener("deviceready", pluginMap, false)
 
+// Load map on map_canvas (BUGGED! the Cordova Plugin wont request our API credentials
 function pluginMap(){
 	// Listen for pause and resume events, initiate local session storage
 //	document.addEventListener("pause", onPause, false);
 //	document.addEventListener("resume", onResume, false);
 	window.localStorage.setItem("login", false);
 	window.localStorage.setItem("user_id", 0);
-	// Store the user's current latLng in myPosition
+	// Store the user's current latLng in myPosition (this 90,90 is for test)
 	var myPosition =  new plugin.google.maps.LatLng(90, 90);
+	// Query cordova geolocator for current location to initialize map
 /*	navigator.geolocation.getCurrentPosition(geoSuccess);
 	function geoSuccess(position){
 		myPosition = new plugin.google.maps.LatLng(90, 90); position.coords.latitude, position.coords.longitude);
@@ -83,6 +86,19 @@ function pluginMap(){
 	
 }
 
+// Pseudo:
+// function onMapInit()
+// query perform_db for performances in the vicinity of user using GEOGRAPHY function;
+// check each results.rows.endTime with NOW() to see if the row should be displayed or removed;
+// remove the old rows;
+// add markers to map for new rows which have a listener "on touch" to display informaton about performance;
+// style html display of performances and populate the #feed panel;
+// add listeners to update the camera on drag, remove markers, and reload markers;
+// add listeners to asynchronously update the feed and map with new elements from the database;
+// listen for pause, resume and logout and update session information appropriately;
+// allow users to update their username, password, description, name etc with appropriate database queries;
+// get parse;
+// win.
 // modify session storage and update the dom with user's profile
 function renderSeshDOM(tx, results, user){
 	window.localStorage.setItem("login", true);

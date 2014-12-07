@@ -95,7 +95,7 @@ function renderSeshDOM(tx, results, user){
 		$(".sesh_email").text(user.email);
 		if (user.role){
     			$(".sesh_description").html("<h2>Performer Description:</h2><p>" + user.description + "</p>");
-	   		$("#perfAnnounce").html("<a href=" + "#announce" + " class=" + "ui-btn ui-btn-icon-left ui-icon-carat-l ui-alt-icon ui-btn-icon-notext" + "></a>");
+	   		$("#perfAnnounce").html("<a href=" + "#announce" + " class=" + "ui-btn ui-btn-inline ui-btn-icon-left ui-icon-carat-l ui-alt-icon ui-btn-icon-notext" + ">Performing now?</a>");
 		}
 //	});    
 	$.mobile.changePage("#home");
