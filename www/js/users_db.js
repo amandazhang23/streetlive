@@ -18,12 +18,12 @@ function createTbl(tx) {
 
 // if an error occurs, alert
 function errorCB(err) {
-    alert("Error processing SQL: "+err.code);
+    console.log("Error processing SQL: "+err.code);
 }
 
 // (for degugging) alert that database was succesfully created
 function successCB() {
-    alert("success! db created");
+    console.log("success! db created");
 }
 
 // inserts a users registration information into the database and callsback.
@@ -37,7 +37,7 @@ function insertDB(tx, user)   {
 
 // When a user is succesfully registered, query for their id and populate DOM with their info
 function registerSuccessDB(tx, user) {
-    alert("successfully inserted, time to query");
+    console.log("successfully inserted, time to query");
     tx.executeSql('SELECT id FROM users WHERE username = ?', [user.username], function(tx, results){ renderSeshDOM(tx, results, user) }, errorCB);
 }
 
@@ -119,7 +119,7 @@ function validateSFormOnSubmit(sForm) {
     return false;
 }
 
-<<<<<<< HEAD
+
 // validate login form. Accepts the form as an html object and calls renderSeshDOM on valid credentials.
 function validateLoginFormOnSubmit(form){
 	// append error messages to reason string
@@ -159,31 +159,7 @@ function validateLoginFormOnSubmit(form){
 	}
 	return false;
 }
-=======
-/*function validateName(name) {
-  -	if(name = )
-   
-}*/
->>>>>>> d0dfcf64df0a4e113ab0f293222bf6b3b99993f5
 
-/*function onSubmit(pForm) {
-    alert("insert worked method 1");
-    console.log("pleaseeee");
-    alert(pForm.pname.value +" "+ pForm.pemail.value);
-    var hash = CryptoJS.SHA1("" + pForm.ppassword.value);
-    var userObj = {
-	role: true,
-	name: pForm.pname.value,
-	username: pForm.pusername.value,
-	password: hash,
-	email: pForm.pemail.value,
-	description: pForm.pdescript.value
-    };
-
-    users_db.transaction(function(tx){ insertDB(tx, userObj) }, errorCB);
-        
-    //$.mobile.changePage("#home");
-}*/
 
 
 

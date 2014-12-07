@@ -119,6 +119,7 @@ function validateSFormOnSubmit(sForm) {
     return false;
 }
 
+
 // validate login form. Accepts the form as an html object and calls renderSeshDOM on valid credentials.
 function validateLoginFormOnSubmit(form){
 	// append error messages to reason string
@@ -159,24 +160,6 @@ function validateLoginFormOnSubmit(form){
 	return false;
 }
 
-/*function onSubmit(pForm) {
-    alert("insert worked method 1");
-    console.log("pleaseeee");
-    alert(pForm.pname.value +" "+ pForm.pemail.value);
-    var hash = CryptoJS.SHA1("" + pForm.ppassword.value);
-    var userObj = {
-	role: true,
-	name: pForm.pname.value,
-	username: pForm.pusername.value,
-	password: hash,
-	email: pForm.pemail.value,
-	description: pForm.pdescript.value
-    };
-
-    users_db.transaction(function(tx){ insertDB(tx, userObj) }, errorCB);
-        
-    //$.mobile.changePage("#home");
-}*/
 
 
 
