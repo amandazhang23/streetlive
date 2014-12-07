@@ -47,17 +47,48 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
+// Wait for device Api's to load
+document.addEventListener("deviceready", function() {
+	// Listen for pause and resume events, initiate local session storage
+//	document.addEventListener("pause", onPause, false);
+//	document.addEventListener("resume", onResume, false);
+	window.localStorage.setItem("login", false);
+	window.localStorage.setItem("user_id", 0);
+	// Store the user's current latLng in myPosition
+	var myPosition =  new plugin.google.maps.LatLng(90, 90);
+/*	navigator.geolocation.getCurrentPosition(geoSuccess);
+	function geoSuccess(position){
+		myPosition = new plugin.google.maps.LatLng(90, 90); position.coords.latitude, position.coords.longitude);
+	};*/
+	// Grab the div where map belongs and initiate map at myPosition
+	var mapDiv = document.getElementById("map_canvas");
+	var map = plugin.google.maps.Map.getMap(mapDiv); /* {
+		'controls': {
+			'zoom': true
+		},
+		'camera': {
+			'latLng': myPosition,
+	    		'zoom': 11
+	    	}
+	});*/
+	// When Map is ready to display, callback onMapInit to place markers
+	map.on(plugin.google.maps.event.MAP_READY, onMapInit);
+	function onMapInit(){
+		$(document).on("pagecreate","#home",function(){
+			map.setVisible();
+		});
+	};
+	
+}, false);
 
-var map;
-
-function initializeMap() {
-    var mapOptions = {
-    center: new google.maps.LatLng(43.069452, -89.411373),
-    zoom: 11,
-    mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
-    map = new google.maps.Map(document.getElementById("map"), mapOptions);
+// Modify session storage and update the dom with user's profile
+function renderSeshDOM(tx, user, results){
+	window.localStorage.setItem("login", true);
+	window.localStorage.setItem("user_id", results.rows.item.id);
+	<h2>Description</h2><p>Description</p>
 }
+
+
 
 
 app.initialize();
